@@ -1,14 +1,24 @@
 /* eslint linebreak-style: ["error", "windows"] */
-// const path = require('path');
 
 module.exports = {
-  entry: '../src/index.js',
+  entry: './src/index.js',
 
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.html$/i,
+        use: ['html-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            esModule: false,
+            name: '[name].[hash].[ext]',
+            outputPath: '../dist/images',
+          },
+        },
       },
     ],
   },
