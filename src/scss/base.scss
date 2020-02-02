@@ -7,6 +7,10 @@
     outline: none;
 }
 
+img {
+    user-select: none;
+}
+
 body {
     background: $blue-linear-background;
     background-attachment: fixed;
