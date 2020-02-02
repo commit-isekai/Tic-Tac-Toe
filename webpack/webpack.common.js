@@ -16,7 +16,7 @@ module.exports = {
           options: {
             esModule: false,
             name: '[name].[hash].[ext]',
-            outputPath: '../dist/images',
+            outputPath: './images',
           },
         },
       },
