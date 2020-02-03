@@ -41,19 +41,14 @@
             border-radius: 5px;
             transition: background 0.3s ease;
 
-            .one-player-logo,
-            .two-player-logo {
+            .logo {
                 transition: filter 0.3s ease;
             }
             
             &.active {
                 background: $in-active-orange;
-
-                .one-player-logo {
-                    filter: invert(1);
-                }
                 
-                .two-player-logo {
+                .logo {
                     filter: invert(1);
                 }
                 
@@ -85,7 +80,7 @@
                 pointer-events: none;
                 position: absolute;
                 height: 100%;
-                width: 45px;
+                width: 50%;
                 background: $blue-linear-background;
                 box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
                 z-index: 20;
@@ -98,15 +93,16 @@
 
     .choose-player-name {
         margin: 60px 0;
-        
+
         .x-player {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             width: 260px;
+            margin-bottom: 50px;
 
             .input {
-                width: 70%;
+                width: 80%;
                 height: 50px;
                 padding: 20px;
                 border-radius: 10px;
@@ -119,6 +115,70 @@
                     background: $white;
                     border: 2px solid $dark;
                 }
+            }
+        }
+    }
+
+    .difficulties {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        height: 40px;
+        background: $in-active-blue;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        
+        .difficulty {
+            user-select: none;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: $dark;
+            z-index: 30;
+            width: 50%;
+            transition: color 0.3s ease;
+
+            &.easy-difficulty {
+                color: $white;
+            }
+        }
+        
+        .slider {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            background: $blue-linear-background;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            z-index: 20;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        &.active {
+            background: $in-active-orange;
+
+            .easy-difficulty {
+                color: $dark;
+            }
+
+            .hard-difficulty {
+                color: $white;
+            }
+            
+            .slider {
+                transform: translateX(100%);
+                background: $orange-linear-background;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
             }
         }
     }
